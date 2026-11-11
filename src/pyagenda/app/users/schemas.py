@@ -29,3 +29,12 @@ class UserGet(UserBase):
 
     class Config:
         from_attributes = True
+
+class UserLogin(BaseModel):
+    """Modelo usado no login"""
+    email: str
+    password: str
+
+class LoginResponse(BaseModel):
+    user: UserGet
+    token: str
